@@ -11,6 +11,10 @@ public class Stopwatch{
 		this.time = System.currentTimeMillis();
 	}
 
+	public boolean reached(double seconds){
+		return elapsedTime() >= seconds;
+	}
+
 	public double elapsedTime(){
 		return (System.currentTimeMillis() - time) / 1000.0D;
 	}
@@ -22,5 +26,9 @@ public class Stopwatch{
 
 	public void reset(){
 		time = System.currentTimeMillis();
+	}
+
+	public void fastForward(double seconds){
+		time -= (seconds * 1000.0);
 	}
 }

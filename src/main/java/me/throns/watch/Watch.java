@@ -1,4 +1,5 @@
 package me.throns.watch;
+
 /*
  *  created by throns on 22/05/2020
  */
@@ -67,5 +68,9 @@ public class Watch{
 	 */
 	public Cooldown get(UUID uuid, String label){
 		return cooldowns.get(uuid).stream().filter(cooldown -> cooldown.getLabel().equals(label)).findFirst().get();
+	}
+
+	public Set<Cooldown> getCooldowns(UUID uuid){
+		return cooldowns.get(uuid);
 	}
 }
